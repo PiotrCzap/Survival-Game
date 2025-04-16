@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnhuedvdxlksa"]
+
+[ext_resource type="Script" uid="uid://bpuc17mhkmvlc" path="res://cave_ladder.gd" id="1_dqkyw"]
+[ext_resource type="Texture2D" uid="uid://chq5tmg26fx1t" path="res://Textures/Map Tileset.png" id="2_ub12c"]
+[ext_resource type="FontFile" uid="uid://duhgih5yye3lo" path="res://Minecraft.ttf" id="3_p8gl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eji0"]
+size = Vector2(16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rn6on"]
+font = ExtResource("3_p8gl4")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Cave Enter" type="Node2D"]
+script = ExtResource("1_dqkyw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ub12c")
+region_enabled = true
+region_rect = Rect2(16, 144, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_1eji0")
+
+[node name="Interact Label" type="Label" parent="Sprite2D"]
+visible = false
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 77.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+text = "[E] Interact"
+label_settings = SubResource("LabelSettings_rn6on")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]

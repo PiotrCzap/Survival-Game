@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://tae2t2a54ysk"]
+
+[ext_resource type="Script" uid="uid://dyk0km24dmx5r" path="res://Skrypty/options.gd" id="1_6dgjo"]
+[ext_resource type="Texture2D" uid="uid://dto6ngln05omu" path="res://Textures/Buttons/Menu Buttons/Menu Button1.png" id="1_qxrqd"]
+[ext_resource type="Texture2D" uid="uid://dwbt71xpoqame" path="res://Textures/Buttons/Menu Buttons/Menu Button2.png" id="2_rfy4c"]
+[ext_resource type="AudioStream" uid="uid://d00xiuri5b1yr" path="res://Sound Effects/Button Click.ogg" id="4_wxc1d"]
+
+[sub_resource type="SystemFont" id="SystemFont_88moi"]
+font_names = PackedStringArray("Minecraft")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwk3d"]
+font = SubResource("SystemFont_88moi")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_7ea0a"]
+font_names = PackedStringArray("Minecraft")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkupu"]
+font = SubResource("SystemFont_7ea0a")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6dgjo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Video" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture_normal = ExtResource("1_qxrqd")
+texture_pressed = ExtResource("2_rfy4c")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Video"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 40.0
+offset_right = 98.0
+offset_bottom = 56.0
+scale = Vector2(3, 3)
+text = "VIDEO"
+label_settings = SubResource("LabelSettings_mwk3d")
+
+[node name="Audio" type="TextureButton" parent="MarginContainer/VBoxContainer/Video"]
+layout_mode = 2
+offset_top = 152.0
+offset_right = 256.0
+offset_bottom = 280.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+texture_normal = ExtResource("1_qxrqd")
+texture_pressed = ExtResource("2_rfy4c")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Video/Audio"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 40.0
+offset_right = 98.0
+offset_bottom = 56.0
+scale = Vector2(3, 3)
+text = "AUDIO"
+label_settings = SubResource("LabelSettings_mwk3d")
+
+[node name="Back Button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+texture_normal = ExtResource("1_qxrqd")
+texture_pressed = ExtResource("2_rfy4c")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Back Button"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 34.0
+offset_right = 80.0
+offset_bottom = 50.0
+scale = Vector2(4, 4)
+text = "BACK"
+label_settings = SubResource("LabelSettings_kkupu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wxc1d")
+bus = &"Button Clicked"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back Button" to="." method="_on_back_button_pressed"]

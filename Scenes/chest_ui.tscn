@@ -1,0 +1,535 @@
+[gd_scene load_steps=21 format=3 uid="uid://dvydtacmteshv"]
+
+[ext_resource type="Script" uid="uid://dobt0jdfjh12o" path="res://Skrypty/chest_ui.gd" id="1_24koo"]
+[ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="1_lwhiq"]
+[ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="2_cjht2"]
+[ext_resource type="FontFile" uid="uid://duhgih5yye3lo" path="res://Minecraft.ttf" id="4_8bmwq"]
+[ext_resource type="Script" uid="uid://cb6vti4i22qvx" path="res://Skrypty/Chest_inventory_ui.gd" id="4_10o1n"]
+[ext_resource type="Texture2D" uid="uid://bfd73rby0q8xk" path="res://Textures/Items/Materials/Coin.png" id="5_6gfwu"]
+[ext_resource type="Texture2D" uid="uid://bh5hqt6oa4i1h" path="res://Textures/Items/Materials/Stick.png" id="7_xkfau"]
+[ext_resource type="Texture2D" uid="uid://bo85sapo4qfpg" path="res://Textures/Items/Materials/Wood.png" id="8_he3c5"]
+[ext_resource type="Texture2D" uid="uid://ckdyatq031s7t" path="res://Textures/Items/Materials/Stone.png" id="8_ru3ki"]
+[ext_resource type="Texture2D" uid="uid://c5u3qyyyiib5k" path="res://Textures/Items/Materials/Planks.png" id="10_tgmbf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_30svb"]
+font = ExtResource("4_8bmwq")
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r8y7c"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tsdki"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lqsb"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2v0l"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dhhvw"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7jqy"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_q73pk"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_pthw3"]
+font = SubResource("SystemFont_q73pk")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_upn0c"]
+font = ExtResource("4_8bmwq")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Chest UI" type="Node2D"]
+z_index = 5
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_24koo")
+
+[node name="Inventory UI" type="Node2D" parent="."]
+script = ExtResource("4_10o1n")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Inventory UI"]
+texture_filter = 1
+offset_left = 4.0
+offset_top = 116.0
+offset_right = 180.0
+offset_bottom = 203.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Inventory Label" type="Label" parent="Inventory UI/NinePatchRect"]
+layout_mode = 0
+offset_left = 73.3333
+offset_top = 2.66667
+offset_right = 416.333
+offset_bottom = 79.6667
+scale = Vector2(0.1, 0.1)
+text = "INVENTORY"
+label_settings = SubResource("LabelSettings_30svb")
+
+[node name="Materials Menu" type="NinePatchRect" parent="Inventory UI"]
+offset_left = 12.0
+offset_top = 132.0
+offset_right = 58.0
+offset_bottom = 148.0
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Inventory UI/Materials Menu"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 74.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+text = "Materials"
+label_settings = SubResource("LabelSettings_r8y7c")
+
+[node name="Items" type="Node2D" parent="Inventory UI/Materials Menu"]
+
+[node name="Coin Item" type="Sprite2D" parent="Inventory UI/Materials Menu/Items"]
+position = Vector2(12, 34)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cjht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inventory UI/Materials Menu/Items/Coin Item"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_6gfwu")
+
+[node name="Coin Quantity" type="Label" parent="Inventory UI/Materials Menu/Items/Coin Item"]
+offset_left = 5.33333
+offset_top = 5.33333
+offset_right = 23.3333
+offset_bottom = 21.3333
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_tsdki")
+
+[node name="Coin TextureButton" type="TextureButton" parent="Inventory UI/Materials Menu/Items/Coin Item"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Stick Item" type="Sprite2D" parent="Inventory UI/Materials Menu/Items"]
+position = Vector2(38, 34)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cjht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inventory UI/Materials Menu/Items/Stick Item"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_xkfau")
+
+[node name="Stick Quantity" type="Label" parent="Inventory UI/Materials Menu/Items/Stick Item"]
+offset_left = 5.33334
+offset_top = 5.33333
+offset_right = 23.3333
+offset_bottom = 21.3333
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_0lqsb")
+
+[node name="Stick TextureButton" type="TextureButton" parent="Inventory UI/Materials Menu/Items/Stick Item"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Wood Item" type="Sprite2D" parent="Inventory UI/Materials Menu/Items"]
+position = Vector2(64, 34)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cjht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inventory UI/Materials Menu/Items/Wood Item"]
+position = Vector2(0, 3.33786e-06)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_he3c5")
+
+[node name="Wood Quantity" type="Label" parent="Inventory UI/Materials Menu/Items/Wood Item"]
+z_index = 1
+offset_left = 5.33333
+offset_top = 5.33333
+offset_right = 23.3333
+offset_bottom = 21.3333
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_0lqsb")
+
+[node name="Wood TextureButton" type="TextureButton" parent="Inventory UI/Materials Menu/Items/Wood Item"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Stone Item" type="Sprite2D" parent="Inventory UI/Materials Menu/Items"]
+position = Vector2(90, 34)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cjht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inventory UI/Materials Menu/Items/Stone Item"]
+position = Vector2(0, -2.66667)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_ru3ki")
+
+[node name="Stone Quantity" type="Label" parent="Inventory UI/Materials Menu/Items/Stone Item"]
+z_index = 1
+offset_left = 5.33334
+offset_top = 5.33333
+offset_right = 23.3333
+offset_bottom = 21.3333
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_0lqsb")
+
+[node name="Stone TextureButton" type="TextureButton" parent="Inventory UI/Materials Menu/Items/Stone Item"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Planks Item" type="Sprite2D" parent="Inventory UI/Materials Menu/Items"]
+position = Vector2(116, 34)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cjht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Inventory UI/Materials Menu/Items/Planks Item"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_tgmbf")
+
+[node name="Planks Quantity" type="Label" parent="Inventory UI/Materials Menu/Items/Planks Item"]
+z_index = 1
+offset_left = 5.33334
+offset_top = 5.33333
+offset_right = 23.3333
+offset_bottom = 21.3333
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_0lqsb")
+
+[node name="Planks TextureButton" type="TextureButton" parent="Inventory UI/Materials Menu/Items/Planks Item"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Food Menu" type="NinePatchRect" parent="Inventory UI"]
+offset_left = 60.0
+offset_top = 132.0
+offset_right = 106.0
+offset_bottom = 148.0
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Inventory UI/Food Menu"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+text = "Food"
+label_settings = SubResource("LabelSettings_r8y7c")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 268.0
+offset_bottom = 114.0
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 4.0
+offset_right = 158.0
+offset_bottom = 20.0
+text = "Chest"
+label_settings = SubResource("LabelSettings_q2v0l")
+
+[node name="Chest Inventory" type="NinePatchRect" parent="NinePatchRect"]
+z_index = 5
+layout_mode = 0
+offset_left = 6.0
+offset_top = 18.0
+offset_right = 92.0
+offset_bottom = 108.0
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Materials Category" type="Node2D" parent="NinePatchRect/Chest Inventory"]
+
+[node name="Slot" type="NinePatchRect" parent="NinePatchRect/Chest Inventory/Materials Category"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 44.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Coin" type="Sprite2D" parent="NinePatchRect/Chest Inventory/Materials Category/Slot"]
+position = Vector2(20, 20)
+scale = Vector2(1.94444, 1.94444)
+texture = ExtResource("5_6gfwu")
+
+[node name="Coin In Chest Label" type="Label" parent="NinePatchRect/Chest Inventory/Materials Category/Slot"]
+layout_mode = 0
+offset_left = 4.44444
+offset_top = 31.1111
+offset_right = 33.4444
+offset_bottom = 47.1111
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_dhhvw")
+
+[node name="Slot2" type="NinePatchRect" parent="NinePatchRect/Chest Inventory/Materials Category"]
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 44.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Stick" type="Sprite2D" parent="NinePatchRect/Chest Inventory/Materials Category/Slot2"]
+position = Vector2(20, 20)
+scale = Vector2(1.94444, 1.94444)
+texture = ExtResource("7_xkfau")
+
+[node name="Stick In Chest Label2" type="Label" parent="NinePatchRect/Chest Inventory/Materials Category/Slot2"]
+layout_mode = 0
+offset_left = 4.44445
+offset_top = 31.1111
+offset_right = 33.4444
+offset_bottom = 47.1111
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_dhhvw")
+
+[node name="Slot3" type="NinePatchRect" parent="NinePatchRect/Chest Inventory/Materials Category"]
+offset_left = 44.0
+offset_top = 4.0
+offset_right = 84.0
+offset_bottom = 44.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Wood" type="Sprite2D" parent="NinePatchRect/Chest Inventory/Materials Category/Slot3"]
+position = Vector2(19.747, 19)
+scale = Vector2(1.77778, 1.77778)
+texture = ExtResource("8_he3c5")
+
+[node name="Wood In Chest Label3" type="Label" parent="NinePatchRect/Chest Inventory/Materials Category/Slot3"]
+layout_mode = 0
+offset_left = 4.44445
+offset_top = 31.1111
+offset_right = 33.4444
+offset_bottom = 47.1111
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_dhhvw")
+
+[node name="Slot4" type="NinePatchRect" parent="NinePatchRect/Chest Inventory/Materials Category"]
+offset_left = 64.0
+offset_top = 4.0
+offset_right = 104.0
+offset_bottom = 44.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Stone" type="Sprite2D" parent="NinePatchRect/Chest Inventory/Materials Category/Slot4"]
+position = Vector2(19.4444, 15.5556)
+scale = Vector2(1.77778, 1.77778)
+texture = ExtResource("8_ru3ki")
+
+[node name="Stone In Chest Label4" type="Label" parent="NinePatchRect/Chest Inventory/Materials Category/Slot4"]
+layout_mode = 0
+offset_left = 4.44445
+offset_top = 31.1111
+offset_right = 33.4444
+offset_bottom = 47.1111
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_dhhvw")
+
+[node name="Slot5" type="NinePatchRect" parent="NinePatchRect/Chest Inventory/Materials Category"]
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 44.0
+offset_bottom = 64.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_cjht2")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Planks" type="Sprite2D" parent="NinePatchRect/Chest Inventory/Materials Category/Slot5"]
+position = Vector2(20, 20)
+scale = Vector2(1.94444, 1.94445)
+texture = ExtResource("10_tgmbf")
+
+[node name="Planks In Chest Label5" type="Label" parent="NinePatchRect/Chest Inventory/Materials Category/Slot5"]
+layout_mode = 0
+offset_left = 4.44445
+offset_top = 31.1111
+offset_right = 33.4444
+offset_bottom = 47.1111
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_dhhvw")
+
+[node name="Chest Categories" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 18.0
+offset_right = 260.0
+offset_bottom = 108.0
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Materials" type="NinePatchRect" parent="NinePatchRect/Chest Categories"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 16.0
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/Chest Categories/Materials"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 72.0
+offset_bottom = 20.0
+scale = Vector2(0.3, 0.3)
+text = "Materials"
+label_settings = SubResource("LabelSettings_u7jqy")
+
+[node name="Food" type="NinePatchRect" parent="NinePatchRect/Chest Categories"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 18.0
+offset_right = 46.0
+offset_bottom = 30.0
+texture = ExtResource("1_lwhiq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/Chest Categories/Food"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 41.0
+offset_bottom = 20.0
+scale = Vector2(0.3, 0.3)
+text = "Food"
+label_settings = SubResource("LabelSettings_u7jqy")
+
+[node name="Label" type="Label" parent="NinePatchRect/Chest Categories"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 78.0
+offset_bottom = 6.0
+scale = Vector2(0.5, 0.5)
+text = "Category"
+label_settings = SubResource("LabelSettings_pthw3")
+
+[node name="Chest Max Capacity" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "0/1024"
+label_settings = SubResource("LabelSettings_upn0c")
+
+[node name="Chest Max Capacity Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 129.0
+offset_bottom = 20.0
+scale = Vector2(0.3, 0.3)
+text = "Chest Capacity"
+label_settings = SubResource("LabelSettings_upn0c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(120, 90)
+zoom = Vector2(6, 6)
+
+[connection signal="pressed" from="Inventory UI/Materials Menu/Items/Coin Item/Coin TextureButton" to="." method="_on_coin_texture_button_pressed"]
+[connection signal="pressed" from="Inventory UI/Materials Menu/Items/Stick Item/Stick TextureButton" to="." method="_on_stick_texture_button_pressed"]
+[connection signal="pressed" from="Inventory UI/Materials Menu/Items/Wood Item/Wood TextureButton" to="." method="_on_wood_texture_button_pressed"]

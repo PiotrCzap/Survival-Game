@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://ping233p04vb"]
+
+[ext_resource type="Script" uid="uid://df4la7ukdf84n" path="res://Skrypty/workbench.gd" id="1_1i3k5"]
+[ext_resource type="Texture2D" uid="uid://6tdf18b3n4ov" path="res://Textures/Blocks/Blocks Atlas.png" id="1_1vs7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46pb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o881"]
+size = Vector2(16, 16)
+
+[sub_resource type="SystemFont" id="SystemFont_3a102"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ox4wu"]
+font = SubResource("SystemFont_3a102")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Workbench" type="Node2D"]
+script = ExtResource("1_1i3k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1vs7y")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_46pb0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_2o881")
+
+[node name="Interact Label" type="Label" parent="Sprite2D"]
+visible = false
+z_index = 10
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 73.0
+offset_bottom = 5.0
+scale = Vector2(0.5, 0.5)
+text = "[E] Interact "
+label_settings = SubResource("LabelSettings_ox4wu")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_exited"]

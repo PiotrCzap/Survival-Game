@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhpg7bw07dofx"]
+
+[ext_resource type="Texture2D" uid="uid://c6eflg6budbru" path="res://Textures/Slime.png" id="1_2d52u"]
+[ext_resource type="Script" uid="uid://cf0k88kb4jvce" path="res://Skrypty/Mobs/Slime_AI.gd" id="2_5jc4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d52u"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jc4t"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l1t8"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bratd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d52u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jc4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l1t8")
+}],
+"loop": true,
+"name": &"Walking Animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jc4t"]
+radius = 100.02
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("2_5jc4t")
+
+[node name="Slime" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bratd")
+animation = &"Walking Animation"
+frame = 2
+frame_progress = 0.641305
+
+[node name="Area2D" type="Area2D" parent="Slime"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime/Area2D"]
+shape = SubResource("CircleShape2D_5jc4t")
+
+[connection signal="body_entered" from="Slime/Area2D" to="." method="_on_area_2d_body_entered"]

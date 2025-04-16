@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://5mvigacul4h1"]
+
+[ext_resource type="Script" uid="uid://duab2b2ywrlhg" path="res://Skrypty/cactus.gd" id="1_8h51i"]
+[ext_resource type="Texture2D" uid="uid://pc2dmn6kc20c" path="res://Textures/Cactus.png" id="1_dyh5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1mp0"]
+radius = 14.0
+
+[node name="Cactus" type="Node2D"]
+script = ExtResource("1_8h51i")
+
+[node name="Cactus" type="Sprite2D" parent="."]
+texture = ExtResource("1_dyh5y")
+
+[node name="Area2D" type="Area2D" parent="Cactus"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cactus/Area2D"]
+shape = SubResource("CircleShape2D_r1mp0")
+
+[node name="Timer" type="Timer" parent="Cactus"]
+process_callback = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cactus"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cactus/StaticBody2D"]
+polygon = PackedVector2Array(2, 15, 1, 16, -2, 16, -3, 15, -3, 2, -7, 2, -8, 1, -10, -1, -11, -2, -11, -3, -10, -7, -9, -8, -8, -8, -3, -8, -4, -10, -4, -11, -3, -14, -2, -15, -1, -15, 1, -14, 3, -14, 4, -15, 5, -16, 7, -16, 9, -15, 11, -13, 11, -11, 9, -9, 7, -8, 6, -7, 5, -6, 3, -4, 3, 0, 8, 0, 9, 1, 9, 6, 8, 7, 6, 8, 5, 9, 2, 9)
+
+[connection signal="body_entered" from="Cactus/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Cactus/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Cactus/Timer" to="." method="_on_timer_timeout"]

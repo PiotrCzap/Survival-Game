@@ -1,0 +1,712 @@
+[gd_scene load_steps=54 format=3 uid="uid://24id2jhmpteu"]
+
+[ext_resource type="Script" uid="uid://b05cwalp1pv6f" path="res://Skrypty/crafting_gui.gd" id="1_br01j"]
+[ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="2_djdky"]
+[ext_resource type="Script" uid="uid://2va0upcq7n75" path="res://Skrypty/Info Panel.gd" id="3_7njwg"]
+[ext_resource type="Texture2D" uid="uid://bddecwf6j685h" path="res://Textures/Item Info Panel Texture.png" id="4_s5dv6"]
+[ext_resource type="Texture2D" uid="uid://dptpk1l4irvlh" path="res://Textures/Buttons/Craft Buttons/Craft Button1.png" id="5_d1n7u"]
+[ext_resource type="Texture2D" uid="uid://57gc3s4dqlrm" path="res://Textures/Buttons/Craft Buttons/Craft Button2.png" id="6_jlbd1"]
+[ext_resource type="Texture2D" uid="uid://ck66dvipr5ma8" path="res://Textures/Items/Tools/Axe-sheet.png" id="7_1qi86"]
+[ext_resource type="Script" uid="uid://cuje26e5nuio8" path="res://Skrypty/Crafting/Wooden Axe Crafting.gd" id="8_4qcc3"]
+[ext_resource type="Texture2D" uid="uid://bo85sapo4qfpg" path="res://Textures/Items/Materials/Wood.png" id="9_ai3dm"]
+[ext_resource type="Texture2D" uid="uid://bh5hqt6oa4i1h" path="res://Textures/Items/Materials/Stick.png" id="10_0vpb3"]
+[ext_resource type="Texture2D" uid="uid://bqa788msd5mv0" path="res://Textures/Items/Tools/Pickaxes.png" id="11_o2fmh"]
+[ext_resource type="Script" uid="uid://6mmt78recdov" path="res://Skrypty/Crafting/Wooden_Pickaxe_Crafting.gd" id="12_7ak3k"]
+[ext_resource type="Texture2D" uid="uid://bvfujjgbsq6o8" path="res://Textures/Items/Tools/Sworlds.png" id="13_xo58w"]
+[ext_resource type="Script" uid="uid://bl2hle8x4ecrm" path="res://Skrypty/Crafting/wooden_sword_crafting_script.gd" id="14_uugvp"]
+[ext_resource type="Texture2D" uid="uid://c5u3qyyyiib5k" path="res://Textures/Items/Materials/Planks.png" id="15_g81l1"]
+[ext_resource type="Script" uid="uid://cpn3qewjdmiex" path="res://Skrypty/Crafting/Plank Crafting.gd" id="16_vm12o"]
+[ext_resource type="Texture2D" uid="uid://dhyjy7g2cay0m" path="res://Textures/Workbench.png" id="17_f8bn2"]
+[ext_resource type="Script" uid="uid://do65411orq4fq" path="res://Skrypty/workbench_crafting.gd" id="18_66er0"]
+[ext_resource type="Texture2D" uid="uid://jw28jeacfkyq" path="res://Textures/Campfire.png" id="19_pl4ib"]
+[ext_resource type="Script" uid="uid://dh1fr7ptlmkiy" path="res://Skrypty/campfire_crafting_script.gd" id="20_yue4w"]
+[ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="21_a0ddm"]
+[ext_resource type="FontFile" uid="uid://duhgih5yye3lo" path="res://Minecraft.ttf" id="22_7gi7p"]
+[ext_resource type="AudioStream" uid="uid://d00xiuri5b1yr" path="res://Sound Effects/Button Click.ogg" id="23_42hxa"]
+
+[sub_resource type="SystemFont" id="SystemFont_ysand"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ug17s"]
+font = SubResource("SystemFont_ysand")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_xko0m"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgtij"]
+font = SubResource("SystemFont_xko0m")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_xge1u"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrims"]
+font = SubResource("SystemFont_xge1u")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_mmf0b"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_r5bdr"]
+font = SubResource("SystemFont_mmf0b")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_ic7jb"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1k581"]
+font = SubResource("SystemFont_ic7jb")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_32pse"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_lke4p"]
+font = SubResource("SystemFont_32pse")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_uefa6"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_w6mxr"]
+font = SubResource("SystemFont_uefa6")
+font_size = 50
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_1k68y"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kjuo"]
+font = SubResource("SystemFont_1k68y")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_8ot4f"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngblh"]
+font = SubResource("SystemFont_8ot4f")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_yx6ci"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_5cq78"]
+font = SubResource("SystemFont_yx6ci")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_njddj"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xj8sm"]
+font = SubResource("SystemFont_njddj")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="Animation" id="Animation_j2kid"]
+resource_name = "Crafting Info Panel"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, 10), Vector2(72, 108)]
+}
+
+[sub_resource type="Animation" id="Animation_mdvcy"]
+resource_name = "Crafting Info Panel Closing"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, 108), Vector2(72, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_iyohg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, 108)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xtlt"]
+_data = {
+&"Crafting Info Panel": SubResource("Animation_j2kid"),
+&"Crafting Info Panel Closing": SubResource("Animation_mdvcy"),
+&"RESET": SubResource("Animation_iyohg")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_5r5jn"]
+font = ExtResource("22_7gi7p")
+font_size = 50
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a14pi"]
+font = ExtResource("22_7gi7p")
+font_size = 50
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tt7ym"]
+font = ExtResource("22_7gi7p")
+font_size = 56
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ndtg"]
+font = ExtResource("22_7gi7p")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Crafting GUI" type="Node2D"]
+script = ExtResource("1_br01j")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 7
+offset_left = 8.0
+offset_top = -7.0
+offset_right = 202.0
+offset_bottom = 131.0
+texture = ExtResource("2_djdky")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="All Craftings" type="Node2D" parent="NinePatchRect"]
+position = Vector2(5, 21)
+script = ExtResource("3_7njwg")
+
+[node name="Info Panel" type="NinePatchRect" parent="NinePatchRect/All Craftings"]
+offset_left = -79.0
+offset_top = -9.0
+offset_right = -7.0
+offset_bottom = 99.0
+texture = ExtResource("4_s5dv6")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Timer" type="Timer" parent="NinePatchRect/All Craftings/Info Panel"]
+process_callback = 0
+wait_time = 0.1
+
+[node name="Tools" type="Node2D" parent="NinePatchRect/All Craftings"]
+
+[node name="Wooden Axe Craft Button" type="TextureButton" parent="NinePatchRect/All Craftings/Tools"]
+z_index = 8
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 31.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button"]
+z_index = 10
+position = Vector2(13, 15)
+rotation = 0.575959
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("7_1qi86")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Wooden Axe Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button"]
+script = ExtResource("8_4qcc3")
+
+[node name="Crafting Information" type="Node2D" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button"]
+visible = false
+
+[node name="Item Name" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information"]
+z_index = 10
+offset_left = -64.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -5.0
+scale = Vector2(0.5, 0.5)
+text = "Wooden Axe"
+label_settings = SubResource("LabelSettings_ug17s")
+
+[node name="Item Damage" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information"]
+z_index = 10
+offset_left = -73.0
+offset_top = 53.0
+offset_right = 19.0
+offset_bottom = 76.0
+scale = Vector2(0.5, 0.5)
+text = "Damage: 2"
+label_settings = SubResource("LabelSettings_ug17s")
+
+[node name="Item Durability" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information"]
+z_index = 10
+offset_left = -73.0
+offset_top = 63.0
+offset_right = 34.0
+offset_bottom = 86.0
+scale = Vector2(0.5, 0.5)
+text = "Durability: 100"
+label_settings = SubResource("LabelSettings_ug17s")
+
+[node name="Wood" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information"]
+position = Vector2(-66, -11)
+texture = ExtResource("9_ai3dm")
+
+[node name="Item Wood" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information/Wood"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+text = "3"
+label_settings = SubResource("LabelSettings_jgtij")
+
+[node name="Sticks" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information"]
+position = Vector2(-66, 6)
+texture = ExtResource("10_0vpb3")
+
+[node name="Item Sticks" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Crafting Information/Sticks"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+text = "2"
+label_settings = SubResource("LabelSettings_xrims")
+
+[node name="Wooden Pickaxe Craft Button" type="TextureButton" parent="NinePatchRect/All Craftings/Tools"]
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 64.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button"]
+position = Vector2(17, 15)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_o2fmh")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Wooden Pickaxe Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button"]
+script = ExtResource("12_7ak3k")
+
+[node name="Crafting information" type="Node2D" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button"]
+visible = false
+
+[node name="Item Name" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Crafting information"]
+z_index = 5
+offset_left = -100.0
+offset_top = -28.0
+offset_right = 25.0
+offset_bottom = -5.0
+scale = Vector2(0.4, 0.4)
+text = "Wooden Pickaxe"
+label_settings = SubResource("LabelSettings_r5bdr")
+
+[node name="Wood" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Crafting information"]
+position = Vector2(-99, -12)
+texture = ExtResource("9_ai3dm")
+
+[node name="Item Wood" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Crafting information/Wood"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+text = "3"
+label_settings = SubResource("LabelSettings_1k581")
+
+[node name="Sticks" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Crafting information"]
+position = Vector2(-99, 6)
+texture = ExtResource("10_0vpb3")
+
+[node name="Item Sticks" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Crafting information/Sticks"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+text = "2"
+label_settings = SubResource("LabelSettings_lke4p")
+
+[node name="Wooden Sword" type="TextureButton" parent="NinePatchRect/All Craftings/Tools"]
+z_index = 2
+offset_left = 65.0
+offset_top = 22.0
+offset_right = 97.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Sword"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_xo58w")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Wooden Sword Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Tools/Wooden Sword"]
+script = ExtResource("14_uugvp")
+
+[node name="Crafting information" type="Node2D" parent="NinePatchRect/All Craftings/Tools/Wooden Sword"]
+visible = false
+position = Vector2(-33, 0)
+
+[node name="Item Name" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information"]
+z_index = 5
+offset_left = -99.0
+offset_top = -28.0
+offset_right = 26.0
+offset_bottom = -5.0
+scale = Vector2(0.4, 0.4)
+text = "Wooden Sword"
+label_settings = SubResource("LabelSettings_r5bdr")
+
+[node name="Item Attack Damage Info" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information"]
+z_index = 5
+offset_left = -107.0
+offset_top = 48.0
+offset_right = 31.0
+offset_bottom = 71.0
+scale = Vector2(0.4, 0.4)
+text = "Attack Damage: 2"
+label_settings = SubResource("LabelSettings_r5bdr")
+
+[node name="Item Durability Info2" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information"]
+z_index = 5
+offset_left = -107.0
+offset_top = 56.0
+offset_right = 31.0
+offset_bottom = 79.0
+scale = Vector2(0.4, 0.4)
+text = "Durability: 100"
+label_settings = SubResource("LabelSettings_r5bdr")
+
+[node name="Wood" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information"]
+position = Vector2(-99, -12)
+texture = ExtResource("9_ai3dm")
+
+[node name="Item Wood" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information/Wood"]
+offset_left = 9.0
+offset_top = -5.0
+offset_right = 49.0
+offset_bottom = 46.0
+scale = Vector2(0.2, 0.2)
+text = "2"
+label_settings = SubResource("LabelSettings_1k581")
+
+[node name="Sticks" type="Sprite2D" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information"]
+position = Vector2(-99, 6)
+texture = ExtResource("10_0vpb3")
+
+[node name="Item Sticks" type="Label" parent="NinePatchRect/All Craftings/Tools/Wooden Sword/Crafting information/Sticks"]
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 47.0
+scale = Vector2(0.2, 0.2)
+text = "1"
+label_settings = SubResource("LabelSettings_lke4p")
+
+[node name="Materials" type="Node2D" parent="NinePatchRect/All Craftings"]
+visible = false
+
+[node name="Plank Craft Button" type="TextureButton" parent="NinePatchRect/All Craftings/Materials"]
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 31.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_g81l1")
+
+[node name="Planks Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button"]
+script = ExtResource("16_vm12o")
+
+[node name="Crafting Information" type="Node2D" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button"]
+
+[node name="Wood" type="Sprite2D" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button/Crafting Information"]
+visible = false
+position = Vector2(-66, -12)
+texture = ExtResource("9_ai3dm")
+
+[node name="Item Name" type="Label" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button/Crafting Information/Wood"]
+offset_left = 11.0
+offset_top = -16.0
+offset_right = 145.0
+offset_bottom = 35.0
+scale = Vector2(0.2, 0.2)
+text = "Plank"
+label_settings = SubResource("LabelSettings_w6mxr")
+
+[node name="Item Wood" type="Label" parent="NinePatchRect/All Craftings/Materials/Plank Craft Button/Crafting Information/Wood"]
+offset_left = 9.0
+offset_top = -3.0
+offset_right = 49.0
+offset_bottom = 20.0
+text = "1"
+label_settings = SubResource("LabelSettings_3kjuo")
+
+[node name="Other" type="Node2D" parent="NinePatchRect/All Craftings"]
+visible = false
+
+[node name="Workbench Craft Button" type="TextureButton" parent="NinePatchRect/All Craftings/Other"]
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 31.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_f8bn2")
+
+[node name="Workbench Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button"]
+script = ExtResource("18_66er0")
+
+[node name="Crafting Information" type="Node2D" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button"]
+
+[node name="Item Name" type="Label" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button/Crafting Information"]
+offset_left = -68.0
+offset_top = -27.0
+offset_right = 18.0
+offset_bottom = -4.0
+scale = Vector2(0.6, 0.6)
+text = "Workbench"
+label_settings = SubResource("LabelSettings_ngblh")
+
+[node name="Planks" type="Sprite2D" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button/Crafting Information"]
+position = Vector2(-65, -6)
+texture = ExtResource("15_g81l1")
+
+[node name="Label" type="Label" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button/Crafting Information/Planks"]
+offset_left = 11.0
+offset_top = -6.0
+offset_right = 51.0
+offset_bottom = 17.0
+text = "3"
+label_settings = SubResource("LabelSettings_5cq78")
+
+[node name="Sticks" type="Sprite2D" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button/Crafting Information"]
+position = Vector2(-65, 15)
+texture = ExtResource("10_0vpb3")
+
+[node name="Label" type="Label" parent="NinePatchRect/All Craftings/Other/Workbench Craft Button/Crafting Information/Sticks"]
+offset_left = 10.0
+offset_top = -5.0
+offset_right = 50.0
+offset_bottom = 18.0
+text = "4"
+label_settings = SubResource("LabelSettings_xj8sm")
+
+[node name="Campfire" type="TextureButton" parent="NinePatchRect/All Craftings/Other"]
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 64.0
+offset_bottom = 54.0
+texture_normal = ExtResource("5_d1n7u")
+texture_pressed = ExtResource("6_jlbd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/All Craftings/Other/Campfire"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_pl4ib")
+
+[node name="Campfire Crafting Script" type="Node" parent="NinePatchRect/All Craftings/Other/Campfire"]
+script = ExtResource("20_yue4w")
+
+[node name="Crafting Info Panel Animation" type="AnimationPlayer" parent="NinePatchRect"]
+root_node = NodePath("../All Craftings")
+libraries = {
+&"": SubResource("AnimationLibrary_5xtlt")
+}
+
+[node name="Tools Menu" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 21.0
+offset_right = 96.0
+offset_bottom = 34.0
+texture = ExtResource("21_a0ddm")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Tools Menu" type="TextureButton" parent="NinePatchRect/Tools Menu"]
+layout_mode = 0
+offset_right = 29.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="NinePatchRect/Tools Menu"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 181.0
+offset_bottom = 55.0
+scale = Vector2(0.13, 0.13)
+text = "TOOLS"
+label_settings = SubResource("LabelSettings_5r5jn")
+
+[node name="Materials Menu" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 65.0
+offset_bottom = 34.0
+texture = ExtResource("21_a0ddm")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Materials Menu" type="TextureButton" parent="NinePatchRect/Materials Menu"]
+layout_mode = 0
+offset_right = 29.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="NinePatchRect/Materials Menu"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 216.0
+offset_bottom = 55.0
+scale = Vector2(0.11, 0.11)
+text = "Materials"
+label_settings = SubResource("LabelSettings_a14pi")
+
+[node name="Crafting Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -65.0
+offset_right = 254.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "CRAFTING"
+label_settings = SubResource("LabelSettings_tt7ym")
+
+[node name="Other Menu" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 34.0
+offset_bottom = 34.0
+texture = ExtResource("21_a0ddm")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Other Menu" type="TextureButton" parent="NinePatchRect/Other Menu"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="NinePatchRect/Other Menu"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 146.0
+offset_bottom = 54.0
+scale = Vector2(0.15, 0.15)
+text = "Other"
+label_settings = SubResource("LabelSettings_7ndtg")
+
+[node name="Button Click Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_42hxa")
+
+[connection signal="timeout" from="NinePatchRect/All Craftings/Info Panel/Timer" to="NinePatchRect/All Craftings" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button" to="NinePatchRect/All Craftings" method="_on_wooden_axe_craft_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button" to="NinePatchRect/All Craftings" method="_on_wooden_axe_craft_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button" to="NinePatchRect/All Craftings/Tools/Wooden Axe Craft Button/Wooden Axe Crafting Script" method="_on_wooden_axe_craft_button_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button" to="NinePatchRect/All Craftings" method="_on_wooden_pickaxe_craft_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button" to="NinePatchRect/All Craftings" method="_on_wooden_pickaxe_craft_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button" to="NinePatchRect/All Craftings/Tools/Wooden Pickaxe Craft Button/Wooden Pickaxe Crafting Script" method="_on_wooden_pickaxe_craft_button_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/All Craftings/Materials/Plank Craft Button" to="NinePatchRect/All Craftings" method="_on_plank_craft_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/All Craftings/Materials/Plank Craft Button" to="NinePatchRect/All Craftings" method="_on_plank_craft_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/All Craftings/Materials/Plank Craft Button" to="NinePatchRect/All Craftings/Materials/Plank Craft Button/Planks Crafting Script" method="_on_plank_craft_button_pressed"]
+[connection signal="mouse_entered" from="NinePatchRect/All Craftings/Other/Workbench Craft Button" to="NinePatchRect/All Craftings" method="_on_workbench_craft_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/All Craftings/Other/Workbench Craft Button" to="NinePatchRect/All Craftings" method="_on_workbench_craft_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/All Craftings/Other/Workbench Craft Button" to="NinePatchRect/All Craftings/Other/Workbench Craft Button/Workbench Crafting Script" method="_on_workbench_craft_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/All Craftings/Other/Campfire" to="NinePatchRect/All Craftings/Other/Campfire/Campfire Crafting Script" method="_on_campfire_pressed"]
+[connection signal="pressed" from="NinePatchRect/Tools Menu/Tools Menu" to="." method="_on_tools_menu_pressed"]
+[connection signal="pressed" from="NinePatchRect/Materials Menu/Materials Menu" to="." method="_on_materials_menu_pressed"]
+[connection signal="pressed" from="NinePatchRect/Other Menu/Other Menu" to="." method="_on_other_menu_pressed"]

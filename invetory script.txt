@@ -1,0 +1,8 @@
+	$"Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Equip Button".hide()
+	if Global.Wooden_Axe == 1:
+		Global.Wooden_Axe_Equipped = not Global.Wooden_Axe_Equipped
+		
+		if Global.Wooden_Axe_Equipped == true:
+			$"Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Equip Button".text = str("Unequip")
+		else:
+			$"Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Equip Button".text = str("Equip")

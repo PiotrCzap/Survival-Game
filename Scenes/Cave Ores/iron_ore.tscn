@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca8mlikm4n83f"]
+
+[ext_resource type="Texture2D" uid="uid://bkwe1ede5dtoi" path="res://Textures/Ores.png" id="1_pu68a"]
+
+[node name="Iron Ore" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pu68a")
+region_enabled = true
+region_rect = Rect2(0, 0, 17, 16)

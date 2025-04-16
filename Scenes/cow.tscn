@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmcm0ph3oip2f"]
+
+[ext_resource type="Script" uid="uid://kdd87xitdjaj" path="res://Skrypty/Animals/cow AI.gd" id="1_kl8vn"]
+[ext_resource type="Texture2D" uid="uid://d0qguewlhonmt" path="res://Textures/Cow.png" id="2_jtd6u"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_kl8vn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+z_index = 1
+polygon = PackedVector2Array(-6, 2, -6, 3, -5, 3, -5, 8, 6, 8, 7, 3, 9, 1, 9, 0, 7, -3, 6, -4, -2, -4, -2, -6, -3, -7, -4, -7, -6, -5, -9, -5, -11, -7, -12, -7, -13, -6, -13, -5, -11, -3, -11, 1, -10, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jtd6u")

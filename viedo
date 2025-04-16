@@ -1,0 +1,149 @@
+Resource Path,Type,Format,Usage
+,Texture,576x576 RGBA8,1.26 MiB
+res://Textures/Blocks/Blocks Atlas.png,Texture,512x512 RGBA8,1024 KiB
+,Texture,288x288 RGBA8,324.0 KiB
+,Texture,288x288 RGBA8,324.0 KiB
+,Texture,288x288 RGBA8,324.0 KiB
+,Texture,288x288 RGBA8,324.0 KiB
+res://Textures/Map Tileset.png,Texture,256x256 RGBA8,256.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,256x256 LumAlpha8,128.0 KiB
+,Texture,800x6 RGBA8,18.75 KiB
+,Texture,800x6 RGBA8,18.75 KiB
+res://Textures/Pyramid.png,Texture,64x64 RGBA8,16.00 KiB
+res://Player Animations/Player Standing/Player3.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Standing/Player2.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Standing/Player1.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Village House 1.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Cactus.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Walking/gracz4.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Walking/gracz3.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Walking/gracz2.png,Texture,32x32 RGBA8,4.00 KiB
+res://Player Animations/Player Walking/gracz1.png,Texture,32x32 RGBA8,4.00 KiB
+res://Shop Animation/Shop2.png,Texture,32x32 RGBA8,4.00 KiB
+res://Shop Animation/Shop.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Inventory background.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Inventory slot.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Item Info Panel Texture.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Buttons/Craft Buttons/Craft Button1.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Buttons/Craft Buttons/Craft Button2.png,Texture,32x32 RGBA8,4.00 KiB
+res://Textures/Items/Tools/Axe-sheet.png,Texture,48x16 RGBA8,3.00 KiB
+res://Textures/Bars/Level Progress Bar/Level Progress Bar fill.png,Texture,100x8 RGB8,2.34 KiB
+res://Textures/Bars/Backgroun Progress Bar.png,Texture,100x8 RGB8,2.34 KiB
+res://Textures/Bars/Health Progress Bar/Health Progress Bar.png,Texture,100x8 RGB8,2.34 KiB
+res://Textures/Bars/Food Progress Bar/Progress Bar Fill.png,Texture,100x8 RGB8,2.34 KiB
+,Texture,16x32 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+,Texture,32x16 RGBA8,2.00 KiB
+res://Textures/Cow.png,Texture,32x16 RGBA8,2.00 KiB
+res://Textures/Pickaxes.png,Texture,32x16 RGBA8,2.00 KiB
+res://Textures/New Tree.png,Texture,16x32 RGBA8,2.00 KiB
+res://Textures/Buttons/Equip Buttons/Equip Button Hover.png,Texture,32x16 RGB8,1.50 KiB
+res://Textures/Buttons/Equip Buttons/Equip Button.png,Texture,32x16 RGB8,1.50 KiB
+,Texture,48x8 RGBA8,1.50 KiB
+,Texture,8x48 RGBA8,1.50 KiB
+res://Textures/Stone.png,Texture,18x16 RGBA8,1.12 KiB
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Workbench.png,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Apple.png,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Items/Materials/Planks.png,Texture,16x16 RGBA8,1024 B
+res://Textures/Items/Materials/Wood.png,Texture,16x16 RGBA8,1024 B
+res://Textures/Items/Materials/Stick.png,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Items/Materials/Coin.png,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Building Mode Texture.png,Texture,16x16 RGBA8,1024 B
+res://Textures/Backpack.png,Texture,16x16 RGBA8,1024 B
+res://Textures/Campfire.png,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Scenes/campfire.tscn::GradientTexture1D_u8bm1,Texture,256x1 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+,Texture,16x16 RGBA8,1024 B
+res://Textures/Blocks/Plank Block Build Button.png,Texture,16x16 RGB8,768 B
+res://Textures/Blocks/Wood Floor Build Button.png,Texture,16x16 RGB8,768 B
+,Texture,12x12 RGBA8,576 B
+,Texture,12x12 RGBA8,576 B
+,Texture,12x12 RGBA8,576 B
+,Texture,8x16 RGBA8,512 B
+,Texture,8x16 RGBA8,512 B
+,Texture,14x8 RGBA8,448 B
+,Texture,10x10 RGBA8,400 B
+,Texture,4x4x4 RGBA8,256 B
+,Texture,4x4x4 RGBA8,256 B
+,Texture,8x8 RGBA8,256 B
+,Texture,8x8 RGBA8,256 B
+,Texture,16x4 RGBA8,256 B
+,Texture,4x16 RGBA8,256 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,4x4 RGBA8,84 B
+,Texture,0x0 RGBA8,0 B
+,Texture,0x0 RGBA8,0 B
+,Texture,1918x1078 RGBA8,0 B
+,Texture,0x0 Red8,0 B

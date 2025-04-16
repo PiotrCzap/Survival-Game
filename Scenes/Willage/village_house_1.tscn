@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dle7qe4hxv4kf"]
+
+[ext_resource type="Texture2D" uid="uid://cq8i23mwgscuk" path="res://Textures/Willage Tile set.png" id="1_b5sjt"]
+
+[node name="Village House 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b5sjt")
+region_enabled = true
+region_rect = Rect2(8, 0, 64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-29, 2, -27, 2, -3, -10, 2, -10, 27, 2, 29, 2, 29, -15, 2, -28, -3, -28, -29, -15)

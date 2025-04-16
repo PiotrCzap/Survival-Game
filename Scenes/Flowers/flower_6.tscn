@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkelil1keawgf"]
+
+[ext_resource type="Texture2D" uid="uid://mtmefyx0srqk" path="res://Textures/Flowers.png" id="1_7by5b"]
+
+[node name="Flower 6" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_7by5b")
+region_enabled = true
+region_rect = Rect2(80, 16, 16, 16)

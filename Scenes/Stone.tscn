@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjul2yp4bjh3v"]
+
+[ext_resource type="Script" uid="uid://dmrchydlm1bop" path="res://Skrypty/Stone.gd" id="1_onmq1"]
+[ext_resource type="Texture2D" uid="uid://bygnt6o42cgsi" path="res://Textures/Stone.png" id="1_u157r"]
+
+[node name="Stone" type="Node2D"]
+script = ExtResource("1_onmq1")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 15.0
+texture_normal = ExtResource("1_u157r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureButton"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureButton/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(4, 7, 5, 7, 5, 6, 13, 6, 13, 7, 14, 7, 14, 8, 16, 8, 16, 9, 17, 9, 17, 11, 18, 11, 18, 14, 17, 14, 17, 15, 16, 15, 16, 16, 2, 16, 2, 15, 1, 15, 1, 14, 0, 14, 0, 11, 1, 11, 1, 9, 2, 9, 2, 8, 4, 8)

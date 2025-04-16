@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c42i85go3k2ax"]
+
+[ext_resource type="Script" uid="uid://7n752ntwd538" path="res://Skrypty/chest.gd" id="1_7ns37"]
+[ext_resource type="Texture2D" uid="uid://5k0hfwio52ky" path="res://Textures/Chest.png" id="1_ob4ef"]
+[ext_resource type="PackedScene" uid="uid://dvydtacmteshv" path="res://Scenes/chest_ui.tscn" id="3_m4nk2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_on2vs"]
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a376"]
+size = Vector2(16, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqypd"]
+size = Vector2(16, 6)
+
+[node name="Chest" type="Node2D"]
+script = ExtResource("1_7ns37")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ob4ef")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 250.0
+offset_bottom = 53.0
+scale = Vector2(0.1, 0.1)
+text = "[E] Interact"
+label_settings = SubResource("LabelSettings_on2vs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_5a376")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_tqypd")
+
+[node name="Chest UI" parent="." instance=ExtResource("3_m4nk2")]
+visible = false
+position = Vector2(-66, -58)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

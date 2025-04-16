@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvp7rgrww1018"]
+
+[ext_resource type="Script" uid="uid://ynaaw33dfivh" path="res://Skrypty/Tree New.gd" id="1_2cq8y"]
+[ext_resource type="Texture2D" uid="uid://c44mocus61xnl" path="res://Textures/New Tree.png" id="2_f8t8v"]
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_2cq8y")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 32.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_f8t8v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TextureButton"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureButton/StaticBody2D"]
+polygon = PackedVector2Array(6, 1, 7, 1, 7, 0, 9, 0, 9, 1, 10, 1, 10, 4, 11, 4, 11, 7, 12, 7, 12, 10, 13, 10, 13, 13, 14, 13, 14, 16, 15, 16, 15, 19, 16, 19, 16, 22, 15, 22, 15, 23, 10, 23, 10, 27, 6, 27, 6, 23, 1, 23, 1, 22, 0, 22, 0, 19, 1, 19, 1, 16, 2, 16, 2, 13, 3, 13, 3, 10, 4, 10, 4, 7, 5, 7, 5, 4, 6, 4)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(40.5, 78)
+scale = Vector2(4.45, 8.2)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="VisibleOnScreenNotifier2D"]

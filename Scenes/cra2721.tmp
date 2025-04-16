@@ -1,0 +1,171 @@
+[gd_scene load_steps=13 format=3 uid="uid://24id2jhmpteu"]
+
+[ext_resource type="Script" path="res://Skrypty/crafting_gui.gd" id="1_bn37c"]
+[ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="1_sjnqu"]
+[ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="2_oopl1"]
+[ext_resource type="Texture2D" uid="uid://c5u3qyyyiib5k" path="res://Textures/Items/Planks.png" id="3_bw6pn"]
+[ext_resource type="Texture2D" uid="uid://bwoh0xl4duxmc" path="res://Textures/Craft Button.png" id="4_uwn7i"]
+[ext_resource type="Texture2D" uid="uid://ck66dvipr5ma8" path="res://Textures/Items/Axe-sheet.png" id="6_od1va"]
+[ext_resource type="Script" path="res://Wooden Axe Crafting.gd" id="7_5ogpb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tt7ym"]
+font_size = 56
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2khyh"]
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rslmd"]
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ae57c"]
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s3w24"]
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[node name="Crafting GUI" type="Node2D"]
+script = ExtResource("1_bn37c")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 10
+offset_right = 135.0
+offset_bottom = 335.0
+texture = ExtResource("1_sjnqu")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -2.0
+offset_right = 295.0
+offset_bottom = 75.0
+scale = Vector2(0.3, 0.3)
+text = "CRAFTING"
+label_settings = SubResource("LabelSettings_tt7ym")
+
+[node name="Planks Crafting" type="NinePatchRect" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 132.0
+offset_bottom = 45.0
+texture = ExtResource("2_oopl1")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Planks Icon" type="Sprite2D" parent="NinePatchRect/Planks Crafting"]
+position = Vector2(12, 12)
+texture = ExtResource("3_bw6pn")
+
+[node name="Planks Label" type="Label" parent="NinePatchRect/Planks Crafting"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 200.0
+offset_bottom = 80.0
+scale = Vector2(0.1, 0.1)
+text = "Planks"
+label_settings = SubResource("LabelSettings_2khyh")
+
+[node name="Craft Button" type="TextureButton" parent="NinePatchRect/Planks Crafting"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 3.0
+offset_right = 124.0
+offset_bottom = 19.0
+texture_normal = ExtResource("4_uwn7i")
+
+[node name="Material" type="Label" parent="NinePatchRect/Planks Crafting"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 10.0
+offset_right = 226.0
+offset_bottom = 87.0
+scale = Vector2(0.09, 0.09)
+text = "1 Wood"
+label_settings = SubResource("LabelSettings_rslmd")
+
+[node name="Wooden Axe Crafting" type="NinePatchRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 132.0
+offset_bottom = 71.0
+texture = ExtResource("2_oopl1")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Wooden Axe Icon" type="Sprite2D" parent="NinePatchRect/Wooden Axe Crafting"]
+position = Vector2(9, 12)
+texture = ExtResource("6_od1va")
+hframes = 3
+
+[node name="Wooden Axe Label" type="Label" parent="NinePatchRect/Wooden Axe Crafting"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 2.0
+offset_right = 362.0
+offset_bottom = 79.0
+scale = Vector2(0.1, 0.1)
+text = "Wooden Axe"
+label_settings = SubResource("LabelSettings_ae57c")
+
+[node name="Material 1" type="Label" parent="NinePatchRect/Wooden Axe Crafting"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 9.0
+offset_right = 225.0
+offset_bottom = 86.0
+scale = Vector2(0.09, 0.09)
+text = "2 Sticks"
+label_settings = SubResource("LabelSettings_s3w24")
+
+[node name="Material 2" type="Label" parent="NinePatchRect/Wooden Axe Crafting"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 245.0
+offset_bottom = 86.0
+scale = Vector2(0.09, 0.09)
+text = "1 Wood"
+label_settings = SubResource("LabelSettings_s3w24")
+
+[node name="Wooden Axe Craft Button" type="TextureButton" parent="NinePatchRect/Wooden Axe Crafting"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 3.0
+offset_right = 124.0
+offset_bottom = 19.0
+texture_normal = ExtResource("4_uwn7i")
+
+[node name="Wooden Axe Crafting Script" type="Node" parent="NinePatchRect/Wooden Axe Crafting"]
+script = ExtResource("7_5ogpb")
+
+[connection signal="pressed" from="NinePatchRect/Planks Crafting/Craft Button" to="." method="_on_craft_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Wooden Axe Crafting/Wooden Axe Craft Button" to="." method="_on_wooden_axe_craft_button_pressed"]

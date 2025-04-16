@@ -1,0 +1,951 @@
+[gd_scene load_steps=52 format=3 uid="uid://rs2r0ogx0u5h"]
+
+[ext_resource type="Script" uid="uid://dma6j0v4e3xsg" path="res://Skrypty/New Inventory gui.gd" id="1_vkk3o"]
+[ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="2_2c03f"]
+[ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="3_p57ri"]
+[ext_resource type="Texture2D" uid="uid://bfd73rby0q8xk" path="res://Textures/Items/Materials/Coin.png" id="4_kalt7"]
+[ext_resource type="Texture2D" uid="uid://bddecwf6j685h" path="res://Textures/Item Info Panel Texture.png" id="5_bhhgg"]
+[ext_resource type="Texture2D" uid="uid://bh5hqt6oa4i1h" path="res://Textures/Items/Materials/Stick.png" id="6_0336a"]
+[ext_resource type="Texture2D" uid="uid://bo85sapo4qfpg" path="res://Textures/Items/Materials/Wood.png" id="7_p4fok"]
+[ext_resource type="Texture2D" uid="uid://ckdyatq031s7t" path="res://Textures/Items/Materials/Stone.png" id="8_vkk3o"]
+[ext_resource type="Texture2D" uid="uid://c5u3qyyyiib5k" path="res://Textures/Items/Materials/Planks.png" id="9_mvuhk"]
+[ext_resource type="Texture2D" uid="uid://ck66dvipr5ma8" path="res://Textures/Items/Tools/Axe-sheet.png" id="10_g7jsi"]
+[ext_resource type="Texture2D" uid="uid://bby5n37ewmvks" path="res://Textures/Buttons/Equip Buttons/Equip Button.png" id="11_epjds"]
+[ext_resource type="Texture2D" uid="uid://c4c60d0wabvph" path="res://Textures/Buttons/Equip Buttons/Equip Button Hover.png" id="12_tw7ey"]
+[ext_resource type="Texture2D" uid="uid://bqa788msd5mv0" path="res://Textures/Items/Tools/Pickaxes.png" id="13_angqh"]
+[ext_resource type="Texture2D" uid="uid://byc7ifkm3xoux" path="res://Textures/Items/Food/Apple.png" id="14_kyeu6"]
+[ext_resource type="AudioStream" uid="uid://d00xiuri5b1yr" path="res://Sound Effects/Button Click.ogg" id="15_707fu"]
+
+[sub_resource type="SystemFont" id="SystemFont_w3jdl"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_0087u"]
+font = SubResource("SystemFont_w3jdl")
+font_size = 56
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_0ck3r"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4c07p"]
+font = SubResource("SystemFont_0ck3r")
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_k7jwv"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yf3m"]
+font = SubResource("SystemFont_k7jwv")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_63eq7"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l0onb"]
+font = SubResource("SystemFont_63eq7")
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_fdftk"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_enkir"]
+font = SubResource("SystemFont_fdftk")
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_86n7k"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bpmwv"]
+font = SubResource("SystemFont_86n7k")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_jrumd"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqudb"]
+font = SubResource("SystemFont_jrumd")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_aijpy"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_s30ww"]
+font = SubResource("SystemFont_aijpy")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_iebkd"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_fjtnq"]
+font = SubResource("SystemFont_iebkd")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_1tr0v"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xd0px"]
+font = SubResource("SystemFont_1tr0v")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_wxv3x"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mgp6r"]
+font = SubResource("SystemFont_wxv3x")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_oopjv"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_wnbnx"]
+font = SubResource("SystemFont_oopjv")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_45l01"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3h7ws"]
+font = SubResource("SystemFont_45l01")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_dqv7k"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1h2nn"]
+font = SubResource("SystemFont_dqv7k")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_naxdm"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8aoa"]
+font = SubResource("SystemFont_naxdm")
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_452sy"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7fnx"]
+font = SubResource("SystemFont_452sy")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_xvs3d"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8adtl"]
+font = SubResource("SystemFont_xvs3d")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_gqvda"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bravr"]
+font = SubResource("SystemFont_gqvda")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Inventory GUI" type="Node2D"]
+visibility_layer = 512
+script = ExtResource("1_vkk3o")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 12.0
+offset_top = -1.0
+offset_right = 231.0
+offset_bottom = 146.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_2c03f")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Inventory Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 95.3333
+offset_top = 2.66667
+offset_right = 438.333
+offset_bottom = 79.6667
+scale = Vector2(0.1, 0.1)
+text = "INVENTORY"
+label_settings = SubResource("LabelSettings_0087u")
+
+[node name="Materials Menu" type="NinePatchRect" parent="."]
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 25.0
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Materials Menu Button" type="TextureButton" parent="Materials Menu"]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="Materials Menu/Materials Menu Button"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 73.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "Materials"
+label_settings = SubResource("LabelSettings_4c07p")
+
+[node name="Items" type="Node2D" parent="Materials Menu/Materials Menu Button"]
+
+[node name="Coin Slot" type="Sprite2D" parent="Materials Menu/Materials Menu Button/Items"]
+position = Vector2(13, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Coin Item" type="TextureButton" parent="Materials Menu/Materials Menu Button/Items/Coin Slot"]
+offset_left = -13.091
+offset_top = -13.0909
+offset_right = 2.90901
+offset_bottom = 2.90908
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("4_kalt7")
+
+[node name="Coin quantity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item"]
+layout_mode = 0
+offset_left = -0.15146
+offset_top = 9.84848
+offset_right = 17.8485
+offset_bottom = 25.8485
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_8yf3m")
+
+[node name="Coin Item Info" type="NinePatchRect" parent="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 19.0
+offset_right = 74.0
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item Name" type="Label" parent="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item/Coin Item Info"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 3.33333
+offset_right = 43.3333
+offset_bottom = 26.3333
+scale = Vector2(0.5, 0.5)
+text = "Coin"
+label_settings = SubResource("LabelSettings_l0onb")
+
+[node name="Item Rarity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item/Coin Item Info"]
+modulate = Color(1, 0.588235, 0, 1)
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 11.6667
+offset_right = 73.3333
+offset_bottom = 34.6667
+scale = Vector2(0.5, 0.5)
+text = "Legendary"
+label_settings = SubResource("LabelSettings_enkir")
+
+[node name="Stick Slot" type="Sprite2D" parent="Materials Menu/Materials Menu Button/Items"]
+position = Vector2(41.0005, 32)
+scale = Vector2(0.749749, 0.749749)
+texture = ExtResource("3_p57ri")
+
+[node name="Stick Item" type="TextureButton" parent="Materials Menu/Materials Menu Button/Items/Stick Slot"]
+offset_left = -13.3385
+offset_top = -13.3378
+offset_right = 2.66145
+offset_bottom = 2.66212
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("6_0336a")
+
+[node name="Stick quantity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item"]
+layout_mode = 0
+offset_left = 2.19345e-05
+offset_top = 10.0033
+offset_right = 10.0
+offset_bottom = 26.0033
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_bpmwv")
+
+[node name="Stick Item Info" type="NinePatchRect" parent="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 19.0
+offset_right = 74.0
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item Name" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item/Stick Item Info"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 3.33333
+offset_right = 43.3333
+offset_bottom = 26.3333
+scale = Vector2(0.5, 0.5)
+text = "Stick"
+label_settings = SubResource("LabelSettings_l0onb")
+
+[node name="Item Rarity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item/Stick Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 11.6667
+offset_right = 73.3333
+offset_bottom = 34.6667
+scale = Vector2(0.5, 0.5)
+text = "Common"
+label_settings = SubResource("LabelSettings_enkir")
+
+[node name="Wood Slot" type="Sprite2D" parent="Materials Menu/Materials Menu Button/Items"]
+position = Vector2(68.9995, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Wood Item" type="TextureButton" parent="Materials Menu/Materials Menu Button/Items/Wood Slot"]
+offset_left = -13.3327
+offset_top = -13.3333
+offset_right = 2.66734
+offset_bottom = 2.66667
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("7_p4fok")
+
+[node name="Wood quantity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item"]
+layout_mode = 0
+offset_left = 2.47955e-05
+offset_top = 9.99998
+offset_right = 9.00003
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_cqudb")
+
+[node name="Wood Item Info" type="NinePatchRect" parent="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 19.1667
+offset_top = -1.82986e-05
+offset_right = 74.1667
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item Name" type="Label" parent="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item/Wood Item Info"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 3.33333
+offset_right = 43.3333
+offset_bottom = 26.3333
+scale = Vector2(0.5, 0.5)
+text = "Wood"
+label_settings = SubResource("LabelSettings_l0onb")
+
+[node name="Item Rarity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item/Wood Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 11.6667
+offset_right = 73.3333
+offset_bottom = 34.6667
+scale = Vector2(0.5, 0.5)
+text = "Common"
+label_settings = SubResource("LabelSettings_enkir")
+
+[node name="Stone Slot" type="Sprite2D" parent="Materials Menu/Materials Menu Button/Items"]
+position = Vector2(97, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Stone quantity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stone Slot"]
+z_index = 1
+offset_left = -13.3333
+offset_top = 2.66667
+offset_right = -4.33334
+offset_bottom = 18.6667
+scale = Vector2(0.8, 0.8)
+text = "0"
+label_settings = SubResource("LabelSettings_s30ww")
+horizontal_alignment = 3
+
+[node name="Stone Item" type="TextureButton" parent="Materials Menu/Materials Menu Button/Items/Stone Slot"]
+offset_left = -12.0
+offset_top = -13.3333
+offset_right = 6.0
+offset_bottom = 2.66664
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("8_vkk3o")
+
+[node name="Stone Item Info" type="NinePatchRect" parent="Materials Menu/Materials Menu Button/Items/Stone Slot/Stone Item"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 22.0
+offset_right = 77.0
+offset_bottom = 39.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item Name" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stone Slot/Stone Item/Stone Item Info"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 3.33333
+offset_right = 43.3333
+offset_bottom = 26.3333
+scale = Vector2(0.5, 0.5)
+text = "Stone"
+label_settings = SubResource("LabelSettings_l0onb")
+
+[node name="Item Rarity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Stone Slot/Stone Item/Stone Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 11.6667
+offset_right = 73.3333
+offset_bottom = 34.6667
+scale = Vector2(0.5, 0.5)
+text = "Common"
+label_settings = SubResource("LabelSettings_enkir")
+
+[node name="Planks Slot" type="Sprite2D" parent="Materials Menu/Materials Menu Button/Items"]
+texture_filter = 1
+position = Vector2(124, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Planks quantity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Planks Slot"]
+z_index = 1
+offset_left = -13.3333
+offset_top = 2.66667
+offset_right = -4.33334
+offset_bottom = 18.6667
+scale = Vector2(0.8, 0.8)
+text = "0"
+label_settings = SubResource("LabelSettings_fjtnq")
+
+[node name="Planks Item" type="TextureButton" parent="Materials Menu/Materials Menu Button/Items/Planks Slot"]
+offset_left = -13.3333
+offset_top = -13.3333
+offset_right = 2.66663
+offset_bottom = 2.66664
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("9_mvuhk")
+
+[node name="Planks Item Info" type="NinePatchRect" parent="Materials Menu/Materials Menu Button/Items/Planks Slot/Planks Item"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 19.0
+offset_right = 72.0
+offset_bottom = 32.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Item Name" type="Label" parent="Materials Menu/Materials Menu Button/Items/Planks Slot/Planks Item/Planks Item Info"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 3.33333
+offset_right = 43.3333
+offset_bottom = 26.3333
+scale = Vector2(0.5, 0.5)
+text = "Planks"
+label_settings = SubResource("LabelSettings_l0onb")
+
+[node name="Item Rarity" type="Label" parent="Materials Menu/Materials Menu Button/Items/Planks Slot/Planks Item/Planks Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 3.33333
+offset_top = 11.6667
+offset_right = 73.3333
+offset_bottom = 34.6667
+scale = Vector2(0.5, 0.5)
+text = "Common"
+label_settings = SubResource("LabelSettings_enkir")
+
+[node name="Tools Menu" type="NinePatchRect" parent="."]
+offset_left = 65.63
+offset_top = 12.0
+offset_right = 109.63
+offset_bottom = 25.0
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Tools Menu Button" type="TextureButton" parent="Tools Menu"]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button"]
+layout_mode = 0
+offset_left = 10.37
+offset_top = 3.0
+offset_right = 78.37
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "Tools"
+label_settings = SubResource("LabelSettings_4c07p")
+
+[node name="Tools" type="Node2D" parent="Tools Menu/Tools Menu Button"]
+visible = false
+
+[node name="Wooden Axe Slot" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools"]
+position = Vector2(-32.63, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Wooden Axe" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 16.0
+button_mask = 2
+
+[node name="Axe quantity" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe"]
+layout_mode = 0
+offset_left = 2.66667
+offset_top = 21.3333
+offset_right = 11.6667
+offset_bottom = 37.3333
+scale = Vector2(0.6, 0.6)
+text = "0"
+label_settings = SubResource("LabelSettings_xd0px")
+
+[node name="Wooden Axe" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe"]
+position = Vector2(13.3333, 14.6667)
+rotation = 0.523599
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("10_g7jsi")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Item Info" type="NinePatchRect" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 33.0
+offset_top = 3.0
+offset_right = 77.0
+offset_bottom = 29.0
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Item Info"]
+layout_mode = 0
+offset_left = 4.33334
+offset_top = 2.66667
+offset_right = 96.3333
+offset_bottom = 25.6667
+scale = Vector2(0.4, 0.4)
+text = "Wooden Axe"
+label_settings = SubResource("LabelSettings_mgp6r")
+
+[node name="Label2" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 4.33334
+offset_top = 10.3333
+offset_right = 96.3333
+offset_bottom = 33.3333
+scale = Vector2(0.4, 0.4)
+text = "Common"
+label_settings = SubResource("LabelSettings_mgp6r")
+
+[node name="Equip Button" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 14.6667
+offset_top = 8.0
+offset_right = 46.6667
+offset_bottom = 24.0
+texture_normal = ExtResource("11_epjds")
+texture_hover = ExtResource("12_tw7ey")
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Equip Button"]
+layout_mode = 0
+offset_left = 5.33333
+offset_top = 5.33333
+offset_right = 57.3333
+offset_bottom = 21.3333
+scale = Vector2(0.45, 0.45)
+text = "EQUIP"
+label_settings = SubResource("LabelSettings_wnbnx")
+
+[node name="Stone Axe Slot" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools"]
+position = Vector2(-5.63, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Stone Axe" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 16.0
+button_mask = 2
+
+[node name="Stone Axe quantity" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe"]
+layout_mode = 0
+offset_left = 2.66667
+offset_top = 21.3333
+offset_right = 11.6667
+offset_bottom = 37.3333
+scale = Vector2(0.6, 0.6)
+text = "0"
+label_settings = SubResource("LabelSettings_3h7ws")
+
+[node name="Stone Axe" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe"]
+position = Vector2(13.3333, 14.6667)
+rotation = 0.523599
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("10_g7jsi")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Item Info" type="NinePatchRect" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 33.3333
+offset_top = 2.66667
+offset_right = 77.3333
+offset_bottom = 28.6667
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe/Item Info"]
+layout_mode = 0
+offset_left = 4.33334
+offset_top = 3.66667
+offset_right = 83.3333
+offset_bottom = 26.6667
+scale = Vector2(0.4, 0.4)
+text = "Stone Axe"
+label_settings = SubResource("LabelSettings_1h2nn")
+
+[node name="Label2" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe/Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 4.33334
+offset_top = 10.3333
+offset_right = 83.3333
+offset_bottom = 33.3333
+scale = Vector2(0.4, 0.4)
+text = "Common"
+label_settings = SubResource("LabelSettings_1h2nn")
+
+[node name="Stone Axe Equip Button" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 16.282
+offset_top = 8.0
+offset_right = 48.282
+offset_bottom = 24.0
+texture_normal = ExtResource("11_epjds")
+texture_hover = ExtResource("12_tw7ey")
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe/Stone Axe Equip Button"]
+layout_mode = 0
+offset_left = 5.33333
+offset_top = 5.33333
+offset_right = 57.3333
+offset_bottom = 21.3333
+scale = Vector2(0.45, 0.45)
+text = "EQUIP"
+label_settings = SubResource("LabelSettings_wnbnx")
+
+[node name="Wooden Pickaxe Slot" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools"]
+position = Vector2(-32.63, 58)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Wooden Pickaxe" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 16.0
+button_mask = 2
+
+[node name="Wooden Pickaxe quantity" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe"]
+z_index = 1
+layout_mode = 0
+offset_left = 2.66667
+offset_top = 20.0
+offset_right = 11.6667
+offset_bottom = 36.0
+scale = Vector2(0.6, 0.6)
+text = "0"
+label_settings = SubResource("LabelSettings_3h7ws")
+
+[node name="Wooden Pickaxe" type="Sprite2D" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe"]
+position = Vector2(17.3333, 14.6667)
+scale = Vector2(1.58333, 1.58333)
+texture = ExtResource("13_angqh")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Item Info" type="NinePatchRect" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 33.3333
+offset_top = 2.66666
+offset_right = 77.3334
+offset_bottom = 28.6668
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe/Item Info"]
+layout_mode = 0
+offset_left = 4.33334
+offset_top = 3.66667
+offset_right = 83.3333
+offset_bottom = 26.6667
+scale = Vector2(0.3, 0.3)
+text = "Wooden Pickaxe"
+label_settings = SubResource("LabelSettings_1h2nn")
+
+[node name="Label2" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe/Item Info"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.33333
+offset_right = 83.0
+offset_bottom = 32.3333
+scale = Vector2(0.4, 0.4)
+text = "Common"
+label_settings = SubResource("LabelSettings_1h2nn")
+
+[node name="Wooden Pickaxe Equip Button" type="TextureButton" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = -14.6667
+offset_top = -9.33333
+offset_right = 17.3333
+offset_bottom = 6.66667
+texture_normal = ExtResource("11_epjds")
+texture_hover = ExtResource("12_tw7ey")
+
+[node name="Label" type="Label" parent="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe/Wooden Pickaxe Equip Button"]
+layout_mode = 0
+offset_left = 5.33333
+offset_top = 5.33333
+offset_right = 57.3333
+offset_bottom = 21.3333
+scale = Vector2(0.45, 0.45)
+text = "EQUIP"
+label_settings = SubResource("LabelSettings_wnbnx")
+
+[node name="Food Menu" type="NinePatchRect" parent="."]
+offset_left = 112.0
+offset_top = 12.0
+offset_right = 156.0
+offset_bottom = 25.0
+texture = ExtResource("3_p57ri")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Food Menu Button" type="TextureButton" parent="Food Menu"]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 13.0
+
+[node name="Label" type="Label" parent="Food Menu/Food Menu Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 3.0
+offset_right = 49.0
+offset_bottom = 19.0
+scale = Vector2(0.5, 0.5)
+text = "Food"
+label_settings = SubResource("LabelSettings_u8aoa")
+
+[node name="Food" type="Node2D" parent="Food Menu/Food Menu Button"]
+visible = false
+
+[node name="Apple Slot" type="Sprite2D" parent="Food Menu/Food Menu Button/Food"]
+position = Vector2(-79, 32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_p57ri")
+
+[node name="Apple" type="TextureButton" parent="Food Menu/Food Menu Button/Food/Apple Slot"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Apple Sprite" type="Sprite2D" parent="Food Menu/Food Menu Button/Food/Apple Slot/Apple"]
+position = Vector2(16, 16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_kyeu6")
+
+[node name="Apple Quantity" type="Label" parent="Food Menu/Food Menu Button/Food/Apple Slot/Apple"]
+layout_mode = 0
+offset_left = 2.66667
+offset_top = 21.3333
+offset_right = 11.6667
+offset_bottom = 37.3333
+scale = Vector2(0.6, 0.6)
+text = "0"
+label_settings = SubResource("LabelSettings_u7fnx")
+
+[node name="Info Panel" type="NinePatchRect" parent="Food Menu/Food Menu Button/Food/Apple Slot/Apple"]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_top = 3.0
+offset_right = 77.0
+offset_bottom = 29.0
+texture = ExtResource("5_bhhgg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="Food Menu/Food Menu Button/Food/Apple Slot/Apple/Info Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.66667
+offset_right = 45.0
+offset_bottom = 26.6667
+scale = Vector2(0.5, 0.5)
+text = "Apple"
+label_settings = SubResource("LabelSettings_8adtl")
+
+[node name="Label2" type="Label" parent="Food Menu/Food Menu Button/Food/Apple Slot/Apple/Info Panel"]
+modulate = Color(0.588235, 0.588235, 0.588235, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 11.6667
+offset_right = 73.0
+offset_bottom = 34.6667
+scale = Vector2(0.3, 0.3)
+text = "Common"
+label_settings = SubResource("LabelSettings_bravr")
+
+[node name="Button Click Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_707fu")
+
+[connection signal="pressed" from="Materials Menu/Materials Menu Button" to="." method="_on_materials_menu_button_pressed"]
+[connection signal="mouse_entered" from="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item" to="." method="_on_coin_item_mouse_entered"]
+[connection signal="mouse_exited" from="Materials Menu/Materials Menu Button/Items/Coin Slot/Coin Item" to="." method="_on_coin_item_mouse_exited"]
+[connection signal="mouse_entered" from="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item" to="." method="_on_stick_item_mouse_entered"]
+[connection signal="mouse_exited" from="Materials Menu/Materials Menu Button/Items/Stick Slot/Stick Item" to="." method="_on_stick_item_mouse_exited"]
+[connection signal="mouse_entered" from="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item" to="." method="_on_wood_item_mouse_entered"]
+[connection signal="mouse_exited" from="Materials Menu/Materials Menu Button/Items/Wood Slot/Wood Item" to="." method="_on_wood_item_mouse_exited"]
+[connection signal="mouse_entered" from="Materials Menu/Materials Menu Button/Items/Stone Slot/Stone Item" to="." method="_on_stone_item_mouse_entered"]
+[connection signal="mouse_exited" from="Materials Menu/Materials Menu Button/Items/Stone Slot/Stone Item" to="." method="_on_stone_item_mouse_exited"]
+[connection signal="mouse_entered" from="Materials Menu/Materials Menu Button/Items/Planks Slot/Planks Item" to="." method="_on_planks_item_mouse_entered"]
+[connection signal="mouse_exited" from="Materials Menu/Materials Menu Button/Items/Planks Slot/Planks Item" to="." method="_on_planks_item_mouse_exited"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button" to="." method="_on_tools_menu_button_pressed"]
+[connection signal="mouse_entered" from="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe" to="." method="_on_wooden_axe_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe" to="." method="_on_wooden_axe_mouse_exited"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe" to="." method="_on_wooden_axe_pressed"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Wooden Axe Slot/Wooden Axe/Equip Button" to="." method="_on_equip_button_pressed"]
+[connection signal="mouse_entered" from="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe" to="." method="_on_stone_axe_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe" to="." method="_on_stone_axe_mouse_exited"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe" to="." method="_on_stone_axe_pressed"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Stone Axe Slot/Stone Axe/Stone Axe Equip Button" to="." method="_on_stone_axe_equip_button_pressed"]
+[connection signal="mouse_entered" from="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe" to="." method="_on_wooden_pickaxe_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe" to="." method="_on_wooden_pickaxe_mouse_exited"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe" to="." method="_on_wooden_pickaxe_pressed"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe/Wooden Pickaxe Equip Button" to="." method="_on_wooden_pickaxe_equip_button_pressed"]
+[connection signal="pressed" from="Tools Menu/Tools Menu Button/Tools/Wooden Pickaxe Slot/Wooden Pickaxe/Wooden Pickaxe Equip Button" to="." method="_on_stone_axe_equip_button_pressed"]
+[connection signal="pressed" from="Food Menu/Food Menu Button" to="." method="_on_food_menu_button_pressed"]
+[connection signal="mouse_entered" from="Food Menu/Food Menu Button/Food/Apple Slot/Apple" to="." method="_on_apple_mouse_entered"]
+[connection signal="mouse_exited" from="Food Menu/Food Menu Button/Food/Apple Slot/Apple" to="." method="_on_apple_mouse_exited"]
+[connection signal="pressed" from="Food Menu/Food Menu Button/Food/Apple Slot/Apple" to="." method="_on_apple_pressed"]

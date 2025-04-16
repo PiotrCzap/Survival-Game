@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbxk3vbvt5f7l"]
+
+[ext_resource type="Texture2D" uid="uid://cq8i23mwgscuk" path="res://Textures/Willage Tile set.png" id="1_8ii1c"]
+
+[node name="Desert House 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ii1c")
+region_enabled = true
+region_rect = Rect2(8, 0, 64, 64)

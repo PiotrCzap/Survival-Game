@@ -1,0 +1,314 @@
+[gd_scene load_steps=25 format=3 uid="uid://4cyumakjwb7h"]
+
+[ext_resource type="Script" uid="uid://4r03njlqkevf" path="res://Skrypty/workbench_menu.gd" id="1_82pqq"]
+[ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="1_b3qfg"]
+[ext_resource type="Texture2D" uid="uid://dptpk1l4irvlh" path="res://Textures/Buttons/Craft Buttons/Craft Button1.png" id="2_6hxo6"]
+[ext_resource type="Texture2D" uid="uid://57gc3s4dqlrm" path="res://Textures/Buttons/Craft Buttons/Craft Button2.png" id="3_d2e4d"]
+[ext_resource type="Texture2D" uid="uid://ck66dvipr5ma8" path="res://Textures/Items/Tools/Axe-sheet.png" id="4_mn0g7"]
+[ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="6_60flq"]
+[ext_resource type="Texture2D" uid="uid://bygnt6o42cgsi" path="res://Textures/Stone.png" id="6_q26rw"]
+[ext_resource type="Texture2D" uid="uid://bh5hqt6oa4i1h" path="res://Textures/Items/Materials/Stick.png" id="7_v8wyd"]
+[ext_resource type="Script" uid="uid://bq42dnedw8o14" path="res://Skrypty/Workbench Crafting/Stone Axe Crafting.gd" id="8_fvrwx"]
+[ext_resource type="Texture2D" uid="uid://bddecwf6j685h" path="res://Textures/Item Info Panel Texture.png" id="9_53rmr"]
+
+[sub_resource type="SystemFont" id="SystemFont_ljgcn"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfley"]
+font = SubResource("SystemFont_ljgcn")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_jhfwk"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhsd5"]
+font = SubResource("SystemFont_jhfwk")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_mbwpk"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxfj6"]
+font = SubResource("SystemFont_mbwpk")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_bnmuu"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_103qk"]
+font = SubResource("SystemFont_bnmuu")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[sub_resource type="Animation" id="Animation_qjun3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Workbench Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(104, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_kck23"]
+resource_name = "Workbench Info Panel Close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Workbench Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(104, 147), Vector2(104, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_mal3a"]
+resource_name = "Workbench Info Panel Open"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Workbench Info Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(104, 10), Vector2(104, 147)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahe7e"]
+_data = {
+&"RESET": SubResource("Animation_qjun3"),
+&"Workbench Info Panel Close": SubResource("Animation_kck23"),
+&"Workbench Info Panel Open": SubResource("Animation_mal3a")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_5i414"]
+font_names = PackedStringArray("Minecraft")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3q5ig"]
+font = SubResource("SystemFont_5i414")
+font_size = 50
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 1)
+
+[node name="Workbench Menu" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_82pqq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 317.0
+offset_bottom = 165.0
+texture = ExtResource("1_b3qfg")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Tools Menu Craftings" type="Node2D" parent="NinePatchRect"]
+z_index = 15
+
+[node name="Stone Axe Craft Button" type="TextureButton" parent="NinePatchRect/Tools Menu Craftings"]
+offset_left = 6.25
+offset_top = 37.5
+offset_right = 38.25
+offset_bottom = 69.5
+texture_normal = ExtResource("2_6hxo6")
+texture_pressed = ExtResource("3_d2e4d")
+
+[node name="Crafting Informations" type="Node2D" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button"]
+
+[node name="Item Name" type="Label" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations"]
+z_index = 1
+offset_left = -85.0
+offset_top = -27.5
+offset_right = 162.0
+offset_bottom = 23.5
+scale = Vector2(0.2, 0.2)
+text = "Stone Axe"
+label_settings = SubResource("LabelSettings_yfley")
+
+[node name="Stone" type="Sprite2D" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations"]
+z_index = 1
+position = Vector2(-91.25, -6.25)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_q26rw")
+
+[node name="Label" type="Label" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations/Stone"]
+offset_left = 10.0
+offset_top = 1.25
+offset_right = 50.0
+offset_bottom = 24.25
+scale = Vector2(0.5, 0.5)
+text = "3"
+label_settings = SubResource("LabelSettings_fhsd5")
+
+[node name="Sticks" type="Sprite2D" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations"]
+z_index = 1
+position = Vector2(-91.25, 13.75)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_v8wyd")
+
+[node name="Label" type="Label" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations/Sticks"]
+offset_left = 10.0
+offset_top = -2.75
+offset_right = 50.0
+offset_bottom = 13.25
+scale = Vector2(0.5, 0.5)
+text = "2"
+label_settings = SubResource("LabelSettings_fhsd5")
+
+[node name="Damage Label" type="Label" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations"]
+offset_left = -100.0
+offset_top = 91.25
+offset_right = -18.0
+offset_bottom = 114.25
+text = "Damage: 2"
+label_settings = SubResource("LabelSettings_oxfj6")
+
+[node name="Durability Label" type="Label" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Crafting Informations"]
+offset_left = -100.0
+offset_top = 78.0
+offset_right = 9.0
+offset_bottom = 101.0
+scale = Vector2(0.75, 0.75)
+text = "Durability: 200"
+label_settings = SubResource("LabelSettings_oxfj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button"]
+position = Vector2(13, 15)
+rotation = 0.575959
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_mn0g7")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Stone Axe Crafting Script" type="Node" parent="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button"]
+script = ExtResource("8_fvrwx")
+
+[node name="Workbench Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 108.75
+offset_top = 3.75
+offset_right = 211.75
+offset_bottom = 26.75
+text = "WORKBENCH"
+label_settings = SubResource("LabelSettings_103qk")
+
+[node name="Workbench Info Panel" type="NinePatchRect" parent="NinePatchRect"]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = -105.0
+offset_top = 8.0
+offset_right = -1.0
+offset_bottom = 18.0
+texture = ExtResource("9_53rmr")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Timer" type="Timer" parent="NinePatchRect/Workbench Info Panel"]
+process_callback = 0
+wait_time = 0.1
+
+[node name="Workbench Animations" type="AnimationPlayer" parent="NinePatchRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_ahe7e")
+}
+
+[node name="Zakładki" type="Node2D" parent="NinePatchRect"]
+
+[node name="All Menu" type="NinePatchRect" parent="NinePatchRect/Zakładki"]
+offset_left = 6.0
+offset_top = 23.0
+offset_right = 39.0
+offset_bottom = 36.0
+texture = ExtResource("6_60flq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/Zakładki/All Menu"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 3.25
+offset_right = 103.0
+offset_bottom = 54.25
+scale = Vector2(0.15, 0.15)
+text = "ALL"
+label_settings = SubResource("LabelSettings_3q5ig")
+
+[node name="Materials Menu" type="NinePatchRect" parent="NinePatchRect/Zakładki"]
+offset_left = 40.0
+offset_top = 22.5
+offset_right = 73.0
+offset_bottom = 35.5
+texture = ExtResource("6_60flq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/Zakładki/Materials Menu"]
+layout_mode = 0
+offset_left = 6.25
+offset_top = 3.75
+offset_right = 219.25
+offset_bottom = 54.75
+scale = Vector2(0.1, 0.1)
+text = "Materials"
+label_settings = SubResource("LabelSettings_3q5ig")
+
+[node name="Tools Menu" type="NinePatchRect" parent="NinePatchRect/Zakładki"]
+offset_left = 73.75
+offset_top = 22.5
+offset_right = 106.75
+offset_bottom = 35.5
+texture = ExtResource("6_60flq")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/Zakładki/Tools Menu"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.75
+offset_right = 135.0
+offset_bottom = 54.75
+scale = Vector2(0.1, 0.1)
+text = "Tools"
+label_settings = SubResource("LabelSettings_3q5ig")
+
+[connection signal="mouse_entered" from="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button" to="." method="_on_stone_axe_craft_button_mouse_entered"]
+[connection signal="mouse_exited" from="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button" to="." method="_on_stone_axe_craft_button_mouse_exited"]
+[connection signal="pressed" from="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button" to="NinePatchRect/Tools Menu Craftings/Stone Axe Craft Button/Stone Axe Crafting Script" method="_on_stone_axe_craft_button_pressed"]
+[connection signal="timeout" from="NinePatchRect/Workbench Info Panel/Timer" to="." method="_on_timer_timeout"]

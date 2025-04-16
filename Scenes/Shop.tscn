@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://4uk07lclsmo8"]
+
+[ext_resource type="Texture2D" uid="uid://40xa56j1x3jl" path="res://Shop Animation/Shop.png" id="1_3nept"]
+[ext_resource type="Texture2D" uid="uid://cxpakktw5cclq" path="res://Shop Animation/Shop2.png" id="2_6x11p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cffps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3nept")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_6x11p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgwi7"]
+size = Vector2(32, 8.85715)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwmm0"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sibvp"]
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_odi1m"]
+font_size = 56
+
+[node name="Shop" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_cffps")
+frame_progress = 0.972897
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
+position = Vector2(-1.13687e-13, -8.42857)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_pgwi7")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = -26.0
+offset_right = 69.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwmm0")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 136.0
+offset_bottom = 77.0
+scale = Vector2(0.2, 0.2)
+text = "Shop"
+label_settings = SubResource("LabelSettings_sibvp")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 90.0
+scale = Vector2(0.145, 0.145)
+text = "Open Shop [E]"
+label_settings = SubResource("LabelSettings_odi1m")
