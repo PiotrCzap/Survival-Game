@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://dvydtacmteshv"]
 
-[ext_resource type="Script" uid="uid://dobt0jdfjh12o" path="res://Skrypty/chest_ui.gd" id="1_24koo"]
+[ext_resource type="Script" uid="uid://dobt0jdfjh12o" path="res://Skrypty/Skrypty Skrzynki/chest_ui.gd" id="1_24koo"]
 [ext_resource type="Texture2D" uid="uid://cs5nj0d41fw2" path="res://Textures/Inventory background.png" id="1_lwhiq"]
 [ext_resource type="Texture2D" uid="uid://cus8117tqhlto" path="res://Textures/Inventory slot.png" id="2_cjht2"]
 [ext_resource type="FontFile" uid="uid://duhgih5yye3lo" path="res://Minecraft.ttf" id="4_8bmwq"]
-[ext_resource type="Script" uid="uid://cb6vti4i22qvx" path="res://Skrypty/Chest_inventory_ui.gd" id="4_10o1n"]
+[ext_resource type="Script" uid="uid://cb6vti4i22qvx" path="res://Skrypty/Skrypty Skrzynki/Chest_inventory_ui.gd" id="4_10o1n"]
 [ext_resource type="Texture2D" uid="uid://bfd73rby0q8xk" path="res://Textures/Items/Materials/Coin.png" id="5_6gfwu"]
 [ext_resource type="Texture2D" uid="uid://bh5hqt6oa4i1h" path="res://Textures/Items/Materials/Stick.png" id="7_xkfau"]
 [ext_resource type="Texture2D" uid="uid://bo85sapo4qfpg" path="res://Textures/Items/Materials/Wood.png" id="8_he3c5"]

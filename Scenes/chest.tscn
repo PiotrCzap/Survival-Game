@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c42i85go3k2ax"]
 
-[ext_resource type="Script" uid="uid://7n752ntwd538" path="res://Skrypty/chest.gd" id="1_7ns37"]
+[ext_resource type="Script" uid="uid://7n752ntwd538" path="res://Skrypty/Skrypty Skrzynki/chest.gd" id="1_7ns37"]
 [ext_resource type="Texture2D" uid="uid://5k0hfwio52ky" path="res://Textures/Chest.png" id="1_ob4ef"]
 [ext_resource type="PackedScene" uid="uid://dvydtacmteshv" path="res://Scenes/chest_ui.tscn" id="3_m4nk2"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnhuedvdxlksa"]
 
-[ext_resource type="Script" uid="uid://bpuc17mhkmvlc" path="res://cave_ladder.gd" id="1_dqkyw"]
+[ext_resource type="Script" uid="uid://bpuc17mhkmvlc" path="res://Skrypty/cave_ladder.gd" id="1_dqkyw"]
 [ext_resource type="Texture2D" uid="uid://chq5tmg26fx1t" path="res://Textures/Map Tileset.png" id="2_ub12c"]
 [ext_resource type="FontFile" uid="uid://duhgih5yye3lo" path="res://Minecraft.ttf" id="3_p8gl4"]
 

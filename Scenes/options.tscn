@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://tae2t2a54ysk"]
 
-[ext_resource type="Script" uid="uid://dyk0km24dmx5r" path="res://Skrypty/options.gd" id="1_6dgjo"]
+[ext_resource type="Script" uid="uid://dyk0km24dmx5r" path="res://Skrypty/Main Menu Scripts/options.gd" id="1_6dgjo"]
 [ext_resource type="Texture2D" uid="uid://dto6ngln05omu" path="res://Textures/Buttons/Menu Buttons/Menu Button1.png" id="1_qxrqd"]
 [ext_resource type="Texture2D" uid="uid://dwbt71xpoqame" path="res://Textures/Buttons/Menu Buttons/Menu Button2.png" id="2_rfy4c"]
 [ext_resource type="AudioStream" uid="uid://d00xiuri5b1yr" path="res://Sound Effects/Button Click.ogg" id="4_wxc1d"]

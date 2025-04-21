@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c44mocus61xnl" path="res://Textures/New Tree.png" id="2_f8t8v"]
 
 [node name="Tree" type="Node2D"]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_2cq8y")
 
 [node name="TextureButton" type="TextureButton" parent="."]

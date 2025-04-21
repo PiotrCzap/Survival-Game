@@ -6,6 +6,7 @@ func save():
 	Save_file.set_value("Player", "PositionX", round($Player.position.x))
 	Save_file.set_value("Player", "PositionY", round($Player.position.y))
 	Save_file.set_value("Map", "Buildings", $"Building Tilemap Layer".tile_map_data)
+	Save_file.set_value("Map", "World", $TileMapLayer.tile_map_data)
 	Save_file.save("res://save.cfg")
 	
 func Load():

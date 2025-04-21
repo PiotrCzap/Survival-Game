@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj88ed5ylr6rj"]
+
+[ext_resource type="Texture2D" uid="uid://bkwe1ede5dtoi" path="res://Textures/Ores.png" id="1_lee8j"]
+[ext_resource type="Script" uid="uid://cuhckjs64v1n7" path="res://Skrypty/iron_ore.gd" id="1_or2bh"]
+
+[node name="Iron Ore" type="Node2D"]
+script = ExtResource("1_or2bh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lee8j")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="TextureButton" type="TextureButton" parent="Sprite2D"]
+offset_left = -7.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 8.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/StaticBody2D"]
+polygon = PackedVector2Array(-7, 3, -4, 0, -2, -1, 2, -1, 4, 0, 6, 2, 7, 3, 7, 6, 5, 8, -5, 8, -7, 6)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Sprite2D/TextureButton" to="." method="_on_texture_button_pressed"]

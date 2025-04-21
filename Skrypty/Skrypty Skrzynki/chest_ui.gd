@@ -3,8 +3,6 @@ extends Node2D
 var Chest_max_Capacity = 1024
 var Chest_Capacity = 0
 
-
-
 # Items in Chest
 
 var Coins_In_Chest = 0
